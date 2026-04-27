@@ -1,49 +1,46 @@
-# Transformadas de Clarke e Park
-[![N|Solid](http://www.cefet-rj.br/arquivos_download/logo_cefet__home_site.jpg)](http://www.cefet-rj.br/)
+# Clarke and Park Transforms
 
-## Transformada de Clarke
-> "Em engenharia elétrica, a transformada alpha-beta(α-β-γ), também conhecida como transformada de Clarke, é uma transformação matemática aplicada para simplificar a análise de circuitos trifásicos. Conceitualmente ela é similar a transformada dq0. Uma aplicação muito útil da transformada alpha-beta é a geração de um sinal de referência usado para [controle da modulação do vetor espacial](https://en.wikipedia.org/wiki/Space_vector_modulation)."<br/>
-[traduzido da Wikipedia](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_transformation)
+## Clarke Transform
+> "In electrical engineering, the alpha-beta (α-β-γ)transformation, also known as the Clarke transform, is a mathematical transformation applied to simplify the analysis of three-phase circuits. Conceptually, it is similar to the dq0 transform. A very useful application of the alpha-beta transform is the generation of a reference signal used for [space vector modulation control](https://en.wikipedia.org/wiki/Space_vector_modulation)."<br/>
+[Wikipedia](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_transformation)
 
-![eixos de clarke](https://www.mathworks.com/help/physmod/sps/ref/clarke_transform_axes_01.png) ![eixos2 de clarke](https://www.mathworks.com/help/physmod/sps/ref/clarke_transform_axes_02.png)<br/>
-(Fonte: [Mathworks](https://www.mathworks.com/help/physmod/sps/ref/clarketransform.html))
+The Clarke Transform consists of a system where the alpha axis is completely aligned with phase A and the beta axis is in quadrature (90°) with it. This produces two sinusoidal curves shifted by 90 degrees. When the three-phase system is balanced, these alpha-beta curves have equal magnitude. When the system becomes unbalanced, their magnitudes differ.
 
-A Transformada de Clarke consiste em um sistema cujo eixo alpha está completamente alinhado com a fase A e o eixo beta está em quadratura com este. Isso fornece duas curvas senoidais defasadas de 90 graus. Quando o sistema trifásico está em equilíbrio essas duas curvas em alpha-beta tem módulo igual. Quando o sistema desequilibra os módulos se tornam diferentes.
+![](https://www.mathworks.com/help/sps/ref/clarke_transform_model_scope_01.png) <br/>
+(Source: [Mathworks](https://www.mathworks.com/help/physmod/sps/ref/clarketransform.html))
 
-![](https://www.mathworks.com/help/physmod/sps/ref/clarke_transform_model_scope_01.png)<br/>
-(Fonte: [Mathworks](https://www.mathworks.com/help/physmod/sps/ref/clarketransform.html))
+## Park Transform
 
-## Trasformada de Park
+> "The direct-quadrature-zero (dq0) transformation is a tensor that rotates the reference axis of a three-element vector system or a three-by-three matrix in order to simplify analysis. The dq0 transform is the product of the Clarke and Park transforms, first proposed by Robert H. Park in 1929." <br/>
+[Wikipedia](https://en.wikipedia.org/wiki/Direct-quadrature-zero_transformation)
 
-> "A ransformação direto-quadratura-zero (dq0) é um tensor que rotaciona o eixo de referência de um sistema vetorial de três elementos ou uma matriz de três por três elementos com o intuito de simplificar a análise. A transformada dq0 é o produto da transformada de Clarke e de Park, primeiramente proposto po Robert H. Park em 1929." <br/>
-[traduzido da Wikipedia](https://en.wikipedia.org/wiki/Direct-quadrature-zero_transformation)
+![](https://www.mathworks.com/help/sps/ref/park_transform_q_model_scope_01.png) <br/>
+(Source: [MathWorks](https://www.mathworks.com/help/physmod/sps/ref/parktransform.html))
 
-![eixos de park](https://www.mathworks.com/help/physmod/sps/ref/park_transform_axes_01.png) ![eixos2 de park](https://www.mathworks.com/help/physmod/sps/ref/park_transform_axes_02.png)<br/>
-(fonte: [MathWorks](https://www.mathworks.com/help/physmod/sps/ref/parktransform.html))
+When applied to a balanced three-phase system, the Park transform produces constant values for d, q, and zero components. When an imbalance occurs, these values begin to oscillate (at twice the frequency of the original system).
 
-A transformada de Park, quando aplicada a um sistema trifásico equilibrado, apresenta valores de d, q e zero constantes. Quando um desequilíbrio surge esses valores começam a oscilar (com o dobro da frequência do sistema original).
-No momento de calcular a transformada de Park podemos alinhar com a fase A do nosso sistema trifásico o eixo d ou o eixo q. Neste projeto o eixo escolhido para alinhar com a fase A foi o eixo d, que resulta em um gráfico similar ao mostrado abaixo.
+When calculating the Park transform, we can align either the d-axis or the q-axis with phase A of the three-phase system. In this project, the d-axis was chosen for alignment with phase A, resulting in a graph similar to the one shown below.
 
 ![grafico resultante](https://www.mathworks.com/help/physmod/sps/ref/park_transform_q_model_scope_01.png)<br/>
 (fonte: [MathWorks](https://www.mathworks.com/help/physmod/sps/ref/parktransform.html))
 
-# Como usar este software
+# How to Use This Software
 
-A interface gráfica deste programa foi pensada para simplificar ao máximo sua utilização. Sendo assim, esta explicação será breve. Os passos para uma execução usual do programa são:
-1. Executar o arquivo main.py. Como o nome sugere, ele é o arquivo principal do programa e executa todas as instruções. Com o arquivo sendo corretamente executado, uma janela irá se abrir;
+The graphical interface of this program was designed to make usage as simple as possible. Therefore, this explanation will be brief. The steps for a typical execution are:
+1. Run the file main.py. As the name suggests, it is the main file of the program and executes all instructions. When run correctly, a window will open;
 
-2. Na janela aberta é possível inserir todos os dados do programa. ***Vale ressaltar que o programa não gerará os gráficos até que todos os campos estejam devidamente preenchidos***;
+2. In the opened window, you can input all program data. ***Note that the program will not generate graphs until all fields are properly filled;***
 
-3. As unidades estão explicitadas ao lado dos campos, com exceção dos campos "unit" e "Faults", que são menus de lista com opções predeterminadas.
+3. Units are displayed next to the fields, except for the "unit" and "Faults" fields, which are dropdown menus with predefined options;
 
-4. Os campos de texto, como "frequency [Hz]:", somente aceitam números, o caracter decimal de ponto "." e o caracter de sinal negativo "-" para evitar eventuais erros que possam atrapalhar a execução do código;
+4. Text fields, such as "frequency [Hz]:", accept only numbers, the decimal point ".", and the negative sign "-" to prevent possible errors that could disrupt code execution;
 
-5. Não há uma ordem específica na qual os dados devam ser preenchidos.
+5. There is no specific order in which the data must be filled;
 
-6. Quando o preenchimento tiver sido realizado por completo basta clicar no botão "Calculate" para gerar os gráficos nas condições configuradas.
+6. Once all fields are completed, simply click the "Calculate" button to generate the graphs based on the configured conditions;
 
-7. Em seuida uma nova janela se abrirá para mostrar os gráficos. Esta janela é interativa, permitindo manipular o tamanho dos gráficos, aproximar ou afastar, analisar intervalos específicos, etc.
+7. A new window will then open to display the graphs. This window is interactive, allowing you to resize, zoom in/out, and analyze specific intervals;
 
-8. Para salvar os gráficos basta clicar no símbolo de disquete na janela dos gráficos e escolher o formato do arquivo e onde armazená-lo. ***Atente-se que o programa não salva automaticamente estes dados!***
+8. To save the graphs, click the disk icon in the graph window and choose the file format and location. ***Note that the program does not automatically save these files!;***
 
-9. Caso deseje gerar novos gráficos basta repetir as etapas de 2 a 6. ***Note que os gráficos previamente gerados serão sobrescritos, então caso queira manter os dados obtidos é importante executar o passo 8!***
+9. If you want to generate new graphs, repeat steps 2 through 6. ***Note that previously generated graphs will be overwritten, so if you want to keep them, make sure to complete step 8!.***
