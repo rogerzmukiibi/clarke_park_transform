@@ -14,14 +14,14 @@ The Clarke Transform consists of a system where the alpha axis is completely ali
 > "The direct-quadrature-zero (dq0) transformation is a tensor that rotates the reference axis of a three-element vector system or a three-by-three matrix in order to simplify analysis. The dq0 transform is the product of the Clarke and Park transforms, first proposed by Robert H. Park in 1929." <br/>
 [Wikipedia](https://en.wikipedia.org/wiki/Direct-quadrature-zero_transformation)
 
-![](https://www.mathworks.com/help/sps/ref/park_transform_q_model_scope_01.png) <br/>
+![](https://www.mathworks.com/help/sps/ref/park_transform_axes_01.png) ![](https://www.mathworks.com/help/sps/ref/park_transform_axes_02.png) <br/>
 (Source: [MathWorks](https://www.mathworks.com/help/physmod/sps/ref/parktransform.html))
 
 When applied to a balanced three-phase system, the Park transform produces constant values for d, q, and zero components. When an imbalance occurs, these values begin to oscillate (at twice the frequency of the original system).
 
 When calculating the Park transform, we can align either the d-axis or the q-axis with phase A of the three-phase system. In this project, the d-axis was chosen for alignment with phase A, resulting in a graph similar to the one shown below.
 
-![grafico resultante](https://www.mathworks.com/help/physmod/sps/ref/park_transform_q_model_scope_01.png)<br/>
+![grafico resultante](https://www.mathworks.com/help/sps/ref/park_transform_q_model_scope_01.png)<br/>
 (fonte: [MathWorks](https://www.mathworks.com/help/physmod/sps/ref/parktransform.html))
 
 # How to Use This Software
